@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн-Школа Будущего</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Онлайн-Школа</div>
+                <nav class="nav">
+                    <a href="#" class="nav-link active" data-page="home">Главная</a>
+                    <a href="#" class="nav-link" data-page="courses">Курсы</a>
+                    <a href="#" class="nav-link" data-page="schedule">Расписание</a>
+                    <a href="#" class="nav-link" data-page="reviews">Отзывы</a>
+                    <a href="#" class="nav-link" data-page="contact">Контакты</a>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#" class="mobile-nav-link" data-page="home">Главная</a>
+        <a href="#" class="mobile-nav-link" data-page="courses">Курсы</a>
+        <a href="#" class="mobile-nav-link" data-page="schedule">Расписание</a>
+        <a href="#" class="mobile-nav-link" data-page="reviews">Отзывы</a>
+        <a href="#" class="mobile-nav-link" data-page="contact">Контакты</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Page -->
+        <div class="page active" id="home">
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Онлайн-Школа Будущего</h1>
+                        <p class="hero-subtitle">Качественное дистанционное образование для вашего ребенка. Индивидуальный подход, современные методики и опытные преподаватели.</p>
+                        <button class="btn btn--primary btn--lg" onclick="navigateToPage('contact')">Записаться на курс</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="advantages">
+                <div class="container">
+                    <h2 class="section-title">Наши преимущества</h2>
+                    <div class="advantages-grid">
+                        <div class="advantage-card">
+                            <div class="advantage-icon">👤</div>
+                            <h3>Индивидуальный подход</h3>
+                            <p>Учитываем особенности и потребности каждого ученика</p>
+                        </div>
+                        <div class="advantage-card">
+                            <div class="advantage-icon">🎓</div>
+                            <h3>Квалифицированные преподаватели</h3>
+                            <p>Опытные педагоги с профильным образованием и стажем от 5 лет</p>
+                        </div>
+                        <div class="advantage-card">
+                            <div class="advantage-icon">📅</div>
+                            <h3>Гибкое расписание</h3>
+                            <p>Удобное время занятий, возможность индивидуальных уроков</p>
+                        </div>
+                        <div class="advantage-card">
+                            <div class="advantage-icon">💡</div>
+                            <h3>Современные методики</h3>
+                            <p>Используем инновационные подходы и интерактивные материалы</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about">
+                <div class="container">
+                    <h2 class="section-title">О школе</h2>
+                    <div class="about-content">
+                        <p>Онлайн-Школа Будущего — это современная образовательная платформа, где каждый ученик получает качественные знания в комфортной онлайн-среде. Наша миссия — сделать образование доступным, увлекательным и эффективным.</p>
+                        <p>Мы используем передовые методики обучения, интерактивные материалы и индивидуальный подход к каждому ученику. Все занятия проходят в формате видеоконференций с возможностью записи, что позволяет пересматривать материал в любое удобное время.</p>
+                        <p>Наши преподаватели — это профессионалы своего дела, которые не только обладают глубокими знаниями в своей области, но и умеют заинтересовать и мотивировать учеников к обучению.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Courses Page -->
+        <div class="page" id="courses">
+            <div class="container">
+                <h1 class="page-title">Наши курсы</h1>
+                
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">Все курсы</button>
+                    <button class="filter-btn" data-filter="Школьные предметы">Школьные предметы</button>
+                    <button class="filter-btn" data-filter="Языки">Языки</button>
+                    <button class="filter-btn" data-filter="IT">IT</button>
+                    <button class="filter-btn" data-filter="Творчество">Творчество</button>
+                </div>
+
+                <div class="courses-grid" id="coursesGrid"></div>
+            </div>
+        </div>
+
+        <!-- Schedule Page -->
+        <div class="page" id="schedule">
+            <div class="container">
+                <h1 class="page-title">Расписание занятий</h1>
+                <p class="page-description">Все занятия проходят онлайн в формате видеоконференций. Уроки записываются и доступны в личном кабинете.</p>
+                
+                <div class="schedule-container" id="scheduleContainer"></div>
+            </div>
+        </div>
+
+        <!-- Reviews Page -->
+        <div class="page" id="reviews">
+            <div class="container">
+                <h1 class="page-title">Отзывы наших учеников</h1>
+                
+                <div class="reviews-grid" id="reviewsGrid"></div>
+
+                <div class="review-form-section">
+                    <h2 class="section-title">Оставьте свой отзыв</h2>
+                    <form class="review-form" id="reviewForm">
+                        <div class="form-group">
+                            <label class="form-label">Имя *</label>
+                            <input type="text" class="form-control" id="reviewName" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email *</label>
+                            <input type="email" class="form-control" id="reviewEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Курс *</label>
+                            <select class="form-control" id="reviewCourse" required>
+                                <option value="">Выберите курс</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Оценка *</label>
+                            <div class="star-rating" id="starRating">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                            <input type="hidden" id="reviewRating" value="5">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Ваш отзыв *</label>
+                            <textarea class="form-control" id="reviewText" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary">Отправить отзыв</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div class="page" id="contact">
+            <div class="container">
+                <h1 class="page-title">Контакты</h1>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Свяжитесь с нами</h2>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h3>Телефон</h3>
+                                <p>+7 (495) 123-45-67</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <h3>Email</h3>
+                                <p>info@onlineschool.ru</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h3>Адрес</h3>
+                                <p>г. Москва, ул. Образовательная, д. 10</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕐</div>
+                            <div>
+                                <h3>Часы работы</h3>
+                                <p>Пн-Пт: 9:00-21:00<br>Сб-Вс: 10:00-18:00</p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <h3>Мы в социальных сетях</h3>
+                            <div class="social-buttons">
+                                <a href="https://vk.com/onlineschool" target="_blank" class="social-btn">ВКонтакте</a>
+                                <a href="https://t.me/onlineschool" target="_blank" class="social-btn">Telegram</a>
+                                <a href="https://instagram.com/onlineschool" target="_blank" class="social-btn">Instagram</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <h2>Форма обратной связи</h2>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label class="form-label">Имя *</label>
+                                <input type="text" class="form-control" id="contactName" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email *</label>
+                                <input type="email" class="form-control" id="contactEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Тема сообщения *</label>
+                                <input type="text" class="form-control" id="contactSubject" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Сообщение *</label>
+                                <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full-width">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Онлайн-Школа Будущего</h3>
+                    <p>Качественное дистанционное образование для вашего ребенка</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>+7 (495) 123-45-67</p>
+                    <p>info@onlineschool.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Социальные сети</h3>
+                    <p>ВКонтакте | Telegram | Instagram</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Онлайн-Школа Будущего. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-button" id="chatbotButton">
+        <div class="chat-icon">💬</div>
+    </div>
+
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <h3>Помощник онлайн-школы</h3>
+            <button class="chatbot-close" id="chatbotClose">✕</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot-message">
+                <div class="message-content">
+                    <p>Здравствуйте! Я виртуальный помощник нашей онлайн-школы. Могу ответить на вопросы о курсах, расписании, ценах и процессе записи. Чем могу помочь?</p>
+                    <span class="message-time"></span>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-quick-questions" id="quickQuestions">
+            <button class="quick-question-btn" data-question="courses">Какие курсы есть?</button>
+            <button class="quick-question-btn" data-question="prices">Сколько стоит обучение?</button>
+            <button class="quick-question-btn" data-question="enrollment">Как записаться?</button>
+            <button class="quick-question-btn" data-question="schedule">Какое расписание?</button>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInputField" placeholder="Введите ваш вопрос...">
+            <button id="chatbotSendBtn">➤</button>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <span id="notificationText"></span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
